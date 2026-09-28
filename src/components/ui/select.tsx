@@ -38,15 +38,15 @@ const SelectScrollUpButton = React.forwardRef<
 	React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
 	React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
 >(({ className, ...props }, ref) => (
-		<SelectPrimitive.ScrollUpButton
-			ref={ref}
-			className={cn(
-				"flex cursor-default items-center justify-center py-1 text-muted-foreground transition-colors hover:bg-muted hover:text-cream-100",
-				className
-			)}
-			{...props}
-		>
-			<ChevronUp className="h-4 w-4" />
+	<SelectPrimitive.ScrollUpButton
+		ref={ref}
+		className={cn(
+			"flex cursor-default items-center justify-center py-1 text-muted-foreground transition-colors hover:bg-muted hover:text-cream-100",
+			className
+		)}
+		{...props}
+	>
+		<ChevronUp className="h-4 w-4" />
 	</SelectPrimitive.ScrollUpButton>
 ));
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
@@ -55,15 +55,15 @@ const SelectScrollDownButton = React.forwardRef<
 	React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
 	React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
 >(({ className, ...props }, ref) => (
-		<SelectPrimitive.ScrollDownButton
-			ref={ref}
-			className={cn(
-				"flex cursor-default items-center justify-center py-1 text-muted-foreground transition-colors hover:bg-muted hover:text-cream-100",
-				className
-			)}
-			{...props}
-		>
-			<ChevronDown className="h-4 w-4" />
+	<SelectPrimitive.ScrollDownButton
+		ref={ref}
+		className={cn(
+			"flex cursor-default items-center justify-center py-1 text-muted-foreground transition-colors hover:bg-muted hover:text-cream-100",
+			className
+		)}
+		{...props}
+	>
+		<ChevronDown className="h-4 w-4" />
 	</SelectPrimitive.ScrollDownButton>
 ));
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName;
@@ -120,7 +120,7 @@ const SelectItem = React.forwardRef<
 		className={cn(
 			// ps/pe + end-2 instead of pl/pr + right-2: the check sits on the
 			// inline-end edge, so it flips to the left in Persian RTL.
-			"relative flex w-full cursor-default select-none items-center rounded-md py-1.5 ps-2 pe-8 text-sm text-cream-100 outline-none transition-colors duration-150 focus:bg-coffee-700/30 focus:text-cream-50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=checked]:text-coffee-400",
+			"relative flex flex-row-reverse w-full cursor-default select-none items-center rounded-md py-1.5 ps-2 pe-8 text-sm text-cream-100 outline-none transition-colors duration-150 focus:bg-coffee-700/30 focus:text-cream-50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=checked]:text-coffee-400",
 			className
 		)}
 		{...props}

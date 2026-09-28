@@ -29,7 +29,7 @@ export default function Menu() {
 	return (
 		<div className="mx-auto max-w-6xl px-4 sm:px-6 py-8">
 			{/* Search */}
-			<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-11 mb-6">
+			<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-11 mb-6 transition-[border-color,outline-color] duration-150 hover:border-bark-600 focus-within:border-coffee-500 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-coffee-500">
 				<Search size={18} strokeWidth={1.5} className="text-cream-400" />
 				<input
 					value={query}
@@ -46,7 +46,7 @@ export default function Menu() {
 						key={c.slug}
 						onClick={() => setActive(c.slug)}
 						className={cn(
-							"inline-flex items-center gap-2 rounded-full px-4 h-10 text-sm font-medium whitespace-nowrap transition-colors border",
+							"inline-flex items-center gap-2 rounded-full px-4 h-10 text-sm font-medium whitespace-nowrap transition-colors border focus-ring",
 							active === c.slug
 								? "bg-coffee-500 text-cream-50 border-coffee-500"
 								: "bg-bark-900 text-cream-200 border-bark-700 hover:bg-bark-800"

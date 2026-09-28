@@ -38,7 +38,7 @@ export const ResponsiveImage = React.forwardRef<HTMLImageElement, ResponsiveImag
 			>
 				{/* Contain both image layers inside the padded content box without adding an edit target. */}
 				<span data-source-location={undefined} className="block relative w-full h-full overflow-hidden">
-					{options && !loaded && (
+					{options && (
 						<img
 							data-source-location={undefined}
 							src={buildTransformUrl(parsed, {
@@ -49,7 +49,13 @@ export const ResponsiveImage = React.forwardRef<HTMLImageElement, ResponsiveImag
 							})}
 							alt=""
 							aria-hidden="true"
-							className="w-full h-full inset-0 absolute"
+							// Stays mounted behind the sharp image and fades out, so the swap
+							// crossfades instead of popping. Unmounting it on load would leave
+							// the sharp image fading in over bare background.
+							className={cn(
+								"w-full h-full inset-0 absolute transition-opacity duration-500 motion-reduce:transition-none",
+								loaded ? "opacity-0" : "opacity-100"
+							)}
 							style={{
 								objectFit: fittingType === "fit" ? "contain" : "cover",
 								filter: "blur(10px)",
@@ -65,7 +71,8 @@ export const ResponsiveImage = React.forwardRef<HTMLImageElement, ResponsiveImag
 							srcSet={buildSrcSet(parsed, options)}
 							loading="lazy"
 							className={cn(
-								"w-full h-full inset-0 absolute",
+								"w-full h-full inset-0 absolute transition-opacity duration-500 motion-reduce:transition-none",
+								loaded ? "opacity-100" : "opacity-0",
 								fittingType === "fit" ? "object-contain" : "object-cover"
 							)}
 							onLoad={handleLoad}

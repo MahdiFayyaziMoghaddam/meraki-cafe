@@ -23,7 +23,7 @@ export default function ResetPassword() {
 				title="Invalid reset link"
 				subtitle="This password reset link is missing or invalid"
 				footer={
-					<Link to="/forgot-password" className="text-primary font-medium hover:underline">
+					<Link to="/forgot-password" className="text-primary font-medium hover:underline transition-colors duration-150 focus-ring">
 						Request a new link
 					</Link>
 				}
@@ -61,7 +61,7 @@ export default function ResetPassword() {
 					<Label htmlFor="password">New Password</Label>
 					<div className="relative">
 						<Lock
-							className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+							className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
 							aria-hidden="true"
 						/>
 						<Input
@@ -72,7 +72,7 @@ export default function ResetPassword() {
 							placeholder="••••••••"
 							value={newPassword}
 							onChange={(e) => setNewPassword(e.target.value)}
-							className="pl-10 h-12"
+							className="ps-10 h-12"
 							required
 						/>
 					</div>
@@ -81,7 +81,7 @@ export default function ResetPassword() {
 					<Label htmlFor="confirm">Confirm Password</Label>
 					<div className="relative">
 						<Lock
-							className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+							className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
 							aria-hidden="true"
 						/>
 						<Input
@@ -91,7 +91,7 @@ export default function ResetPassword() {
 							placeholder="••••••••"
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
-							className="pl-10 h-12"
+							className="ps-10 h-12"
 							required
 						/>
 					</div>
@@ -99,7 +99,7 @@ export default function ResetPassword() {
 				<Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
 					{loading ? (
 						<>
-							<Loader2 className="w-4 h-4 mr-2 animate-spin" />
+							<Loader2 className="w-4 h-4 ms-2 animate-spin" />
 							Resetting...
 						</>
 					) : (

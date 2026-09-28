@@ -17,7 +17,7 @@ export default function WaiterTables() {
 				title={t("tables")}
 				subtitle={lang === "fa" ? "انتخاب میز برای ثبت سفارش" : "Pick a table to start an order"}
 				actions={
-					<button className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 px-3 h-10 text-sm text-cream-200 hover:bg-bark-700 transition-colors">
+					<button className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 px-3 h-10 text-sm text-cream-200 hover:bg-bark-700 transition-colors focus-ring active:opacity-80">
 						<RefreshCw size={16} strokeWidth={1.5} /> {t("refresh")}
 					</button>
 				}
@@ -31,7 +31,7 @@ export default function WaiterTables() {
 							key={tb.id}
 							onClick={() => navigate(`/waiter/order/new?table=${tb.number}`)}
 							className={cn(
-								"flex flex-col items-center justify-center gap-2 rounded-xl border p-6 transition-colors",
+								"flex flex-col items-center justify-center gap-2 rounded-xl border p-6 transition-colors focus-ring active:opacity-80",
 								occupied
 									? "border-coffee-500/40 bg-bark-900 shadow-glow hover:border-coffee-500"
 									: "border-bark-700/70 bg-bark-900 hover:border-bark-600"

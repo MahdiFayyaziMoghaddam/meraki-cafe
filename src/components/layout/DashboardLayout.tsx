@@ -24,7 +24,7 @@ function NavList({ items }: { items: NavItem[] }) {
 					end={item.end}
 					className={({ isActive }) =>
 						cn(
-							"flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-cream-200 transition-colors",
+							"flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-cream-200 transition-[color,background-color,border-color] duration-150 active:scale-[0.98] motion-reduce:transform-none focus-ring",
 							isActive
 								? "bg-coffee-700/30 text-cream-50 border-s-2 border-coffee-500"
 								: "border-s-2 border-transparent hover:bg-bark-800"
@@ -77,7 +77,7 @@ function SidebarBody({ items, sectionLabel, userLabel, userRole }: SidebarBodyPr
 							navigate("/login");
 						}}
 						aria-label={t("logout")}
-						className="inline-flex size-9 items-center justify-center rounded-[10px] text-cream-300 hover:bg-bark-800 hover:text-coffee-400 transition-colors"
+						className="inline-flex size-9 items-center justify-center rounded-[10px] text-cream-300 hover:bg-bark-800 hover:text-coffee-400 transition-[color,background-color,transform] duration-150 active:scale-[0.94] motion-reduce:transform-none focus-ring"
 					>
 						<LogOut size={18} strokeWidth={1.5} />
 					</button>
@@ -117,7 +117,7 @@ export default function DashboardLayout({
 				<button
 					onClick={() => setOpen(true)}
 					aria-label="Open menu"
-					className="inline-flex size-10 items-center justify-center rounded-[10px] text-cream-200 hover:bg-bark-800"
+					className="inline-flex size-10 items-center justify-center rounded-[10px] text-cream-200 hover:bg-bark-800 active:scale-[0.94] motion-reduce:transform-none transition-[background-color,transform] duration-150 focus-ring"
 				>
 					<Menu size={20} strokeWidth={1.5} />
 				</button>
@@ -131,7 +131,7 @@ export default function DashboardLayout({
 						<button
 							onClick={() => setOpen(false)}
 							aria-label="Close menu"
-							className="absolute top-4 end-4 inline-flex size-9 items-center justify-center rounded-[10px] text-cream-300 hover:bg-bark-800"
+							className="absolute top-4 end-4 inline-flex size-9 items-center justify-center rounded-[10px] text-cream-300 hover:bg-bark-800 transition-[background-color,transform] duration-150 active:scale-[0.94] motion-reduce:transform-none focus-ring"
 						>
 							<X size={18} strokeWidth={1.5} />
 						</button>

@@ -5,6 +5,7 @@ import { expenses as mockExpenses } from "@/lib/mock-data";
 import { formatToman, formatDate } from "@/lib/format";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { cn } from "@/lib/utils";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const inputCls =
 	"w-full rounded-[10px] border border-bark-700 bg-bark-800 px-3 h-11 text-cream-50 placeholder:text-cream-400 outline-none focus:border-coffee-500 focus:ring-2 focus:ring-coffee-500/30 text-sm";
@@ -40,7 +41,7 @@ export default function Expenses() {
 				actions={
 					<button
 						onClick={() => setOpen(true)}
-						className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-4 h-10 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors"
+						className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-4 h-10 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors active:opacity-80 focus-ring"
 					>
 						<Plus size={18} strokeWidth={1.5} /> {t("addExpense")}
 					</button>
@@ -74,13 +75,13 @@ export default function Expenses() {
 										<button
 											onClick={() => setOpen(true)}
 											aria-label={t("edit")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<Pencil size={16} strokeWidth={1.5} />
 										</button>
 										<button
 											aria-label={t("delete")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-danger hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-danger hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<Trash2 size={16} strokeWidth={1.5} />
 										</button>
@@ -101,7 +102,7 @@ export default function Expenses() {
 							<button
 								onClick={() => setOpen(false)}
 								aria-label={t("close")}
-								className="inline-flex size-9 items-center justify-center rounded-[10px] text-cream-300 hover:bg-bark-700"
+								className="inline-flex size-9 items-center justify-center rounded-[10px] text-cream-300 hover:bg-bark-700 transition-colors duration-150 active:opacity-80 focus-ring"
 							>
 								<X size={18} strokeWidth={1.5} />
 							</button>
@@ -113,14 +114,19 @@ export default function Expenses() {
 							<Field icon={HandCoins} label={t("amount")}>
 								<input type="number" className={inputCls} placeholder="0" />
 							</Field>
-							<Field icon={Filter} label={t("category")}>
-								<select className={inputCls}>
-									<option className="bg-bark-800">مواد اولیه</option>
-									<option className="bg-bark-800">حقوق</option>
-									<option className="bg-bark-800">قبوض</option>
-									<option className="bg-bark-800">بازاریابی</option>
-								</select>
-							</Field>
+						<Field icon={Filter} label={t("category")}>
+							<Select defaultValue="raw">
+								<SelectTrigger className="h-11 bg-bark-800 text-cream-50">
+									<SelectValue />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value="raw">مواد اولیه</SelectItem>
+									<SelectItem value="salaries">حقوق</SelectItem>
+									<SelectItem value="bills">قبوض</SelectItem>
+									<SelectItem value="marketing">بازاریابی</SelectItem>
+								</SelectContent>
+							</Select>
+						</Field>
 							<Field icon={Calendar} label={t("date")}>
 								<input type="date" defaultValue="2026-09-27" className={cn(inputCls, "[color-scheme:dark]")} />
 							</Field>
@@ -131,13 +137,13 @@ export default function Expenses() {
 						<div className="flex items-center gap-3 mt-5">
 							<button
 								onClick={() => setOpen(false)}
-								className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-5 h-11 text-cream-50 text-sm font-medium hover:bg-coffee-400"
+								className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-5 h-11 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors duration-150 active:opacity-80 focus-ring"
 							>
 								<Save size={18} strokeWidth={1.5} /> {t("save")}
 							</button>
 							<button
 								onClick={() => setOpen(false)}
-								className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 px-5 h-11 text-cream-200 text-sm hover:bg-bark-700"
+								className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 px-5 h-11 text-cream-200 text-sm hover:bg-bark-700 transition-colors duration-150 focus-ring"
 							>
 								<X size={18} strokeWidth={1.5} /> {t("cancel")}
 							</button>

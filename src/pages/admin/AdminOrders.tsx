@@ -5,6 +5,7 @@ import { orders, type OrderStatus } from "@/lib/mock-data";
 import { formatToman, formatTime } from "@/lib/format";
 import { PageHeader } from "@/components/shared/PageHeader";
 import StatusBadge, { type StatusBadgeStatus } from "@/components/shared/StatusBadge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const statusMap: Record<OrderStatus, StatusBadgeStatus> = {
 	open: "warning",
@@ -24,7 +25,7 @@ export default function AdminOrders() {
 			<PageHeader icon={Receipt} title={t("orders")} subtitle={lang === "fa" ? "همه سفارش‌ها" : "All orders"} />
 
 			<div className="flex flex-wrap gap-3 mb-5">
-				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10">
+				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10 transition-[border-color,outline-color] duration-150 hover:border-bark-600 focus-within:border-coffee-500 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-coffee-500">
 					<Calendar size={16} strokeWidth={1.5} className="text-cream-400" />
 					<input
 						type="date"
@@ -32,38 +33,30 @@ export default function AdminOrders() {
 						className="bg-transparent text-cream-100 outline-none text-sm pe-2 [color-scheme:dark]"
 					/>
 				</div>
-				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10">
-					<Filter size={16} strokeWidth={1.5} className="text-cream-400" />
-					<select
-						value={status}
-						onChange={(e) => setStatus(e.target.value)}
-						className="bg-transparent text-cream-100 outline-none text-sm pe-2"
-					>
-						<option value="all" className="bg-bark-800">
-							{t("all")}
-						</option>
-						<option value="open" className="bg-bark-800">
-							{t("open")}
-						</option>
-						<option value="inProgress" className="bg-bark-800">
-							{t("inProgress")}
-						</option>
-						<option value="paid" className="bg-bark-800">
-							{t("paid")}
-						</option>
-						<option value="closed" className="bg-bark-800">
-							{t("closed")}
-						</option>
-					</select>
-				</div>
-				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10">
-					<UserCog size={16} strokeWidth={1.5} className="text-cream-400" />
-					<select className="bg-transparent text-cream-100 outline-none text-sm pe-2">
-						<option className="bg-bark-800">{t("all")}</option>
-						<option className="bg-bark-800">سارا</option>
-						<option className="bg-bark-800">رضا</option>
-					</select>
-				</div>
+				<Select value={status} onValueChange={setStatus}>
+					<SelectTrigger className="w-auto min-w-40 ps-3">
+						<Filter size={16} strokeWidth={1.5} className="text-cream-400 shrink-0" />
+						<SelectValue />
+					</SelectTrigger>
+					<SelectContent>
+						<SelectItem value="all">{t("all")}</SelectItem>
+						<SelectItem value="open">{t("open")}</SelectItem>
+						<SelectItem value="inProgress">{t("inProgress")}</SelectItem>
+						<SelectItem value="paid">{t("paid")}</SelectItem>
+						<SelectItem value="closed">{t("closed")}</SelectItem>
+					</SelectContent>
+				</Select>
+				<Select defaultValue="all">
+					<SelectTrigger className="w-auto min-w-36 ps-3">
+						<UserCog size={16} strokeWidth={1.5} className="text-cream-400 shrink-0" />
+						<SelectValue />
+					</SelectTrigger>
+					<SelectContent>
+						<SelectItem value="all">{t("all")}</SelectItem>
+						<SelectItem value="sara">سارا</SelectItem>
+						<SelectItem value="reza">رضا</SelectItem>
+					</SelectContent>
+				</Select>
 			</div>
 
 			<div className="overflow-x-auto rounded-xl border border-bark-700/70 bg-bark-900">

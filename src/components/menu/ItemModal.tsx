@@ -19,12 +19,15 @@ export default function ItemModal({ item, onClose }: ItemModalProps) {
 	const cat = lang === "fa" ? item.category : item.category;
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-			<div className="absolute inset-0 bg-ink-950/80 backdrop-blur-sm" onClick={onClose} />
-			<div className="relative w-full max-w-lg overflow-hidden rounded-xl border border-bark-700 bg-bark-800 shadow-md">
+			<div
+				className="absolute inset-0 bg-ink-950/80 backdrop-blur-sm animate-in fade-in duration-200 motion-reduce:animate-none"
+				onClick={onClose}
+			/>
+			<div className="relative w-full max-w-lg overflow-hidden rounded-xl border border-bark-700 bg-bark-800 shadow-md animate-in zoom-in-95 duration-200 motion-reduce:animate-none">
 				<button
 					onClick={onClose}
 					aria-label={t("close")}
-					className="absolute top-3 end-3 z-10 inline-flex size-9 items-center justify-center rounded-[10px] bg-bark-900/80 text-cream-200 hover:bg-bark-700"
+					className="absolute top-3 end-3 z-10 inline-flex size-9 items-center justify-center rounded-[10px] bg-bark-900/80 text-cream-200 hover:bg-bark-700 transition-[background-color,transform] duration-150 active:scale-[0.94] motion-reduce:transform-none focus-ring"
 				>
 					<X size={18} strokeWidth={1.5} />
 				</button>

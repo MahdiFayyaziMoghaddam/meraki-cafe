@@ -78,7 +78,7 @@ export default function WaiterOrders() {
 									{o.status !== "closed" ? (
 										<button
 											onClick={() => closeOrder(o.id)}
-											className="inline-flex items-center gap-1.5 rounded-[8px] bg-coffee-700/30 text-coffee-400 px-2.5 py-1.5 text-xs font-medium hover:bg-coffee-700/50"
+											className="inline-flex items-center gap-1.5 rounded-[8px] bg-coffee-700/30 text-coffee-400 px-2.5 py-1.5 text-xs font-medium hover:bg-coffee-700/50 transition-colors duration-150 focus-ring active:opacity-80"
 										>
 											<Check size={14} strokeWidth={1.5} /> {t("closeOrder")}
 										</button>

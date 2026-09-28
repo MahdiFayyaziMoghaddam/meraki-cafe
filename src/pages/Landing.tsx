@@ -50,10 +50,9 @@ export default function Landing() {
 					</h1>
 					<p className="mt-4 text-cream-100 leading-relaxed text-lg sm:text-xl max-w-xl">
 						{lang === "fa"
-							? "قهوه‌خانه‌ای که در آن هر فنجان با وسواسِ عشق درست می‌شود."
+							? "قهوه‌خانه‌ای که در آن هر فنجان با عشق درست می‌شود."
 							: "A coffee house where every cup is crafted with obsessive love."}
 					</p>
-					<p className="mt-3 text-cream-300 text-sm">{t("tagline")}</p>
 
 					<div className="mt-6 inline-flex items-center gap-2 rounded-full border border-bark-700 bg-bark-900/70 px-4 py-2 text-sm text-cream-200">
 						<Clock size={16} strokeWidth={1.5} className="text-coffee-400" />
@@ -63,7 +62,7 @@ export default function Landing() {
 					<div className="mt-8">
 						<Link
 							to="/menu"
-							className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-6 h-12 text-cream-50 font-medium shadow-sm transition-colors hover:bg-coffee-400"
+							className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-6 h-12 text-cream-50 font-medium shadow-sm transition-colors hover:bg-coffee-400 focus-ring active:opacity-80"
 						>
 							{t("viewMenu")}
 							<ArrowUpRight size={20} strokeWidth={1.5} />
@@ -141,7 +140,7 @@ export default function Landing() {
 					<a
 						href="#"
 						aria-label="Instagram"
-						className="inline-flex size-9 items-center justify-center rounded-[10px] border border-bark-700 text-cream-300 hover:text-coffee-400 hover:bg-bark-800"
+						className="inline-flex size-9 items-center justify-center rounded-[10px] border border-bark-700 text-cream-300 hover:text-coffee-400 hover:bg-bark-800 transition-colors duration-150 focus-ring active:opacity-80"
 					>
 						<Instagram size={18} strokeWidth={1.5} />
 					</a>

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Coffee } from "lucide-react";
 import { useLang } from "@/lib/language-context";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";

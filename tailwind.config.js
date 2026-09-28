@@ -1,4 +1,19 @@
 /** @type {import('tailwindcss').Config} */
+const focusRing = require("tailwindcss/plugin")(({ addUtilities }) => {
+	addUtilities({
+		// One focus recipe for the whole app, so it can't drift between components.
+		// Outline (not ring) on purpose: it follows border-radius, and unlike a
+		// box-shadow ring it is not clipped by an ancestor's overflow:hidden.
+		".focus-ring": {
+			"&:focus": { outline: "none" },
+			"&:focus-visible": {
+				outline: "2px solid hsl(var(--ring))",
+				"outline-offset": "2px"
+			}
+		}
+	});
+});
+
 module.exports = {
 	darkMode: ["class"],
 	content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
@@ -102,5 +117,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")]
+	plugins: [require("tailwindcss-animate"), focusRing]
 };

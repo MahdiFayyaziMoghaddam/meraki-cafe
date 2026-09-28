@@ -65,7 +65,7 @@ export default function Settings() {
 							<button
 								onClick={() => setEditing(null)}
 								aria-label={t("save")}
-								className="inline-flex size-10 items-center justify-center rounded-[10px] bg-coffee-500 text-cream-50 hover:bg-coffee-400"
+								className="inline-flex size-10 items-center justify-center rounded-[10px] bg-coffee-500 text-cream-50 hover:bg-coffee-400 transition-colors duration-150 active:opacity-80 focus-ring"
 							>
 								<Save size={18} strokeWidth={1.5} />
 							</button>
@@ -73,7 +73,7 @@ export default function Settings() {
 							<button
 								onClick={() => setEditing(r.id)}
 								aria-label={t("edit")}
-								className="inline-flex size-10 items-center justify-center rounded-[10px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800"
+								className="inline-flex size-10 items-center justify-center rounded-[10px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 							>
 								<Pencil size={18} strokeWidth={1.5} />
 							</button>

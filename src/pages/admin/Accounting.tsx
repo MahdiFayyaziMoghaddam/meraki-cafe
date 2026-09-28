@@ -33,7 +33,7 @@ export default function Accounting() {
 				title={t("accounting")}
 				subtitle={lang === "fa" ? "گزارش مالی" : "Financial report"}
 				actions={
-					<button className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 px-3 h-10 text-sm text-cream-200 hover:bg-bark-700 transition-colors">
+					<button className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 px-3 h-10 text-sm text-cream-200 hover:bg-bark-700 transition-colors focus-ring">
 						<Download size={16} strokeWidth={1.5} /> {t("export")}
 					</button>
 				}
@@ -45,7 +45,7 @@ export default function Accounting() {
 						key={r.id}
 						onClick={() => setRange(r.id)}
 						className={cn(
-							"inline-flex items-center gap-1.5 rounded-full px-4 h-9 text-sm font-medium border transition-colors",
+							"inline-flex items-center gap-1.5 rounded-full px-4 h-9 text-sm font-medium border transition-colors focus-ring",
 							range === r.id
 								? "bg-coffee-500 text-cream-50 border-coffee-500"
 								: "bg-bark-900 text-cream-200 border-bark-700 hover:bg-bark-800"
@@ -110,7 +110,7 @@ export default function Accounting() {
 					<h2 className="text-cream-50 font-semibold flex items-center gap-2">
 						<Wallet size={18} strokeWidth={1.5} className="text-coffee-400" /> {t("expenses")}
 					</h2>
-					<button className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-3.5 h-9 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors">
+					<button className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-3.5 h-9 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors active:opacity-80 focus-ring">
 						<Plus size={16} strokeWidth={1.5} /> {t("addExpense")}
 					</button>
 				</div>

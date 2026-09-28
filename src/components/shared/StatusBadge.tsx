@@ -23,7 +23,12 @@ export default function StatusBadge({ status = "neutral", children, icon: Overri
 	const { icon: Icon, cls } = map[status] ?? map.neutral;
 	const FinalIcon = OverrideIcon ?? Icon;
 	return (
-		<span className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium", cls)}>
+		<span
+			className={cn(
+				"inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-[color,background-color] duration-200",
+				cls
+			)}
+		>
 			<FinalIcon size={14} strokeWidth={1.5} />
 			{children}
 		</span>

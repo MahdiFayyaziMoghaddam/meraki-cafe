@@ -1,6 +1,6 @@
 const dict = {
 	fa: {
-		brand: "مراکی",
+		brand: "Meraki Cafe",
 		tagline: "قهوه‌خانه‌ای با وسواسِ عشق",
 		viewMenu: "مشاهده منو",
 		hours: "همه‌روزه ۸ تا ۲۴",

@@ -14,7 +14,7 @@ type KpiCardProps = {
 
 export default function KpiCard({ icon: Icon, label, value, delta, deltaUp = true, suffix }: KpiCardProps) {
 	return (
-		<div className="rounded-xl border border-bark-700/70 bg-bark-900 p-5 transition-colors hover:border-bark-600">
+		<div className="rounded-xl border border-bark-700/70 bg-bark-900 p-5 transition-[background-color,border-color,box-shadow,transform] duration-200 hover:border-bark-600 hover:shadow-md hover:-translate-y-0.5 motion-reduce:transform-none motion-reduce:hover:translate-y-0">
 			<div className="flex items-start justify-between">
 				<IconBadge icon={Icon} />
 				{delta != null && (

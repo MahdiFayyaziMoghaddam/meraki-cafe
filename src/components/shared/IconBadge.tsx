@@ -11,7 +11,7 @@ export default function IconBadge({ icon: Icon, className, size = 20 }: IconBadg
 	return (
 		<span
 			className={cn(
-				"inline-flex size-10 items-center justify-center rounded-[10px] bg-coffee-700/30 text-coffee-400",
+				"inline-flex size-10 items-center justify-center rounded-[10px] bg-coffee-700/30 text-coffee-400 transition-[background-color,color,transform] duration-200 motion-safe:hover:scale-105",
 				className
 			)}
 		>

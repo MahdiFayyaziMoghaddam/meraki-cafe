@@ -19,7 +19,7 @@ export default function Users() {
 				title={t("users")}
 				subtitle={lang === "fa" ? "مدیریت کاربران و نقش‌ها" : "Manage users and roles"}
 				actions={
-					<button className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-4 h-10 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors">
+					<button className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-4 h-10 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors active:opacity-80 focus-ring">
 						<UserPlus size={18} strokeWidth={1.5} /> {t("addUser")}
 					</button>
 				}
@@ -66,19 +66,19 @@ export default function Users() {
 									<div className="flex items-center gap-1">
 										<button
 											aria-label={t("resetPassword")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<KeyRound size={16} strokeWidth={1.5} />
 										</button>
 										<button
 											aria-label={t("edit")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<Pencil size={16} strokeWidth={1.5} />
 										</button>
 										<button
 											aria-label={t("delete")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-danger hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-danger hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<Trash2 size={16} strokeWidth={1.5} />
 										</button>

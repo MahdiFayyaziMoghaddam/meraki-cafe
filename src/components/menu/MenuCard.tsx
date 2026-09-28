@@ -16,14 +16,14 @@ export default function MenuCard({ item, onClick }: MenuCardProps) {
 	return (
 		<button
 			onClick={onClick}
-			className="group text-start flex flex-col overflow-hidden rounded-xl border border-bark-700/70 bg-bark-900 transition-colors hover:border-bark-600 hover:shadow-md w-full"
+			className="group text-start flex flex-col overflow-hidden rounded-xl border border-bark-700/70 bg-bark-900 transition-[color,background-color,border-color,box-shadow,transform] duration-200 hover:border-bark-600 hover:shadow-md active:scale-[0.99] motion-reduce:transform-none focus-ring w-full"
 		>
 			<div className="relative aspect-[4/3] overflow-hidden bg-bark-800">
 				<Image
 					src={item.image}
 					alt={name}
 					fittingType="fill"
-					className="h-full w-full transition-transform duration-300 group-hover:scale-105"
+					className="h-full w-full transition-transform duration-300 motion-reduce:transition-none group-hover:scale-105 motion-reduce:group-hover:scale-100"
 				/>
 				<div className="absolute top-2 start-2 flex gap-1.5">
 					{item.isNew && (

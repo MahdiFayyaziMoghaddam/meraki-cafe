@@ -9,7 +9,7 @@ const InputOTP = React.forwardRef<React.ElementRef<typeof OTPInput>, React.Compo
 		<OTPInput
 			ref={ref}
 			containerClassName={cn("flex items-center gap-2 has-[:disabled]:opacity-50", containerClassName)}
-			className={cn("disabled:cursor-not-allowed", className)}
+			className={cn("focus-ring disabled:cursor-not-allowed", className)}
 			{...props}
 		/>
 	)
@@ -30,8 +30,10 @@ const InputOTPSlot = React.forwardRef<HTMLDivElement, React.ComponentPropsWithou
 			<div
 				ref={ref}
 				className={cn(
-					"relative flex h-9 w-9 items-center justify-center border-y border-r border-input text-sm shadow-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-					isActive && "z-10 ring-1 ring-ring",
+					// border-s/e + rounded-s/e rather than border-l/r: the slots sit in a row, so in
+					// RTL the group grows right-to-left and the outer corners must follow.
+					"relative flex h-9 w-9 items-center justify-center border-y border-e border-input text-sm shadow-sm transition-[color,background-color,border-color,outline-color] duration-150 first:rounded-s-md first:border-s last:rounded-e-md",
+					isActive && "z-10 border-coffee-500 outline outline-2 -outline-offset-2 outline-coffee-500",
 					className
 				)}
 				{...props}
@@ -39,7 +41,7 @@ const InputOTPSlot = React.forwardRef<HTMLDivElement, React.ComponentPropsWithou
 				{char}
 				{hasFakeCaret && (
 					<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-						<div className="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
+						<div className="h-4 w-px animate-caret-blink bg-foreground duration-1000 motion-reduce:animate-none" />
 					</div>
 				)}
 			</div>

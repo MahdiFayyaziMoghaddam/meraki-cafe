@@ -63,7 +63,7 @@ export default function MenuForm() {
 			<div className="flex items-center gap-3 mb-6">
 				<button
 					onClick={() => navigate("/admin/menu")}
-					className="inline-flex size-10 items-center justify-center rounded-[10px] border border-bark-700 text-cream-200 hover:bg-bark-800"
+					className="inline-flex size-10 items-center justify-center rounded-[10px] border border-bark-700 text-cream-200 hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 				>
 					<ArrowRight size={18} strokeWidth={1.5} className="rtl:rotate-0 ltr:rotate-180" />
 				</button>
@@ -123,7 +123,7 @@ export default function MenuForm() {
 									key={c.id}
 									onClick={() => set("category", c.slug)}
 									className={cn(
-										"inline-flex items-center gap-1.5 rounded-full px-3.5 h-10 text-sm font-medium border transition-colors",
+										"inline-flex items-center gap-1.5 rounded-full px-3.5 h-10 text-sm font-medium border transition-colors focus-ring",
 										form.category === c.slug
 											? "bg-coffee-500 text-cream-50 border-coffee-500"
 											: "bg-bark-800 text-cream-200 border-bark-700 hover:bg-bark-700"
@@ -161,13 +161,13 @@ export default function MenuForm() {
 			<div className="flex items-center gap-3 mt-6">
 				<button
 					onClick={() => navigate("/admin/menu")}
-					className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-5 h-11 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors"
+					className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-5 h-11 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors active:opacity-80 focus-ring"
 				>
 					<Save size={18} strokeWidth={1.5} /> {t("save")}
 				</button>
 				<button
 					onClick={() => navigate("/admin/menu")}
-					className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 px-5 h-11 text-cream-200 text-sm hover:bg-bark-800 transition-colors"
+					className="inline-flex items-center gap-2 rounded-[10px] border border-bark-700 px-5 h-11 text-cream-200 text-sm hover:bg-bark-800 transition-colors focus-ring"
 				>
 					<X size={18} strokeWidth={1.5} /> {t("cancel")}
 				</button>

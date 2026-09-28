@@ -31,8 +31,8 @@ export default function ForgotPassword() {
 			title="Reset password"
 			subtitle="We'll send you a link to reset it"
 			footer={
-				<Link to="/login" className="text-primary font-medium hover:underline">
-					<ArrowLeft className="w-3 h-3 inline mr-1" />
+				<Link to="/login" className="text-primary font-medium hover:underline transition-colors duration-150 focus-ring">
+					<ArrowLeft className="w-3 h-3 inline ms-1 rtl:rotate-180 motion-reduce:transition-none" />
 					Back to log in
 				</Link>
 			}
@@ -47,7 +47,7 @@ export default function ForgotPassword() {
 						<Label htmlFor="email">Email address</Label>
 						<div className="relative">
 							<Mail
-								className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+								className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
 								aria-hidden="true"
 							/>
 							<Input
@@ -58,7 +58,7 @@ export default function ForgotPassword() {
 								placeholder="you@example.com"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
-								className="pl-10 h-12"
+								className="ps-10 h-12"
 								required
 							/>
 						</div>
@@ -66,7 +66,7 @@ export default function ForgotPassword() {
 					<Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
 						{loading ? (
 							<>
-								<Loader2 className="w-4 h-4 mr-2 animate-spin" />
+								<Loader2 className="w-4 h-4 ms-2 animate-spin" />
 								Sending...
 							</>
 						) : (

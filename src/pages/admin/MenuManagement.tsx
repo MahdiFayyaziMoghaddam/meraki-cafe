@@ -8,6 +8,7 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import CategoryIcon from "@/components/menu/CategoryIcon";
 import { Image } from "@/components/ui/image";
 import { Switch } from "@/components/ui/switch";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function MenuManagement() {
 	const { t, lang } = useLang();
@@ -33,7 +34,7 @@ export default function MenuManagement() {
 				actions={
 					<button
 						onClick={() => navigate("/admin/menu/new")}
-						className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-4 h-10 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors"
+						className="inline-flex items-center gap-2 rounded-[10px] bg-coffee-500 px-4 h-10 text-cream-50 text-sm font-medium hover:bg-coffee-400 transition-colors active:opacity-80 focus-ring"
 					>
 						<Plus size={18} strokeWidth={1.5} /> {t("addItem")}
 					</button>
@@ -41,7 +42,7 @@ export default function MenuManagement() {
 			/>
 
 			<div className="flex flex-wrap gap-3 mb-5">
-				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10 flex-1 min-w-48">
+				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10 flex-1 min-w-48 transition-[border-color,outline-color] duration-150 hover:border-bark-600 focus-within:border-coffee-500 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-coffee-500">
 					<Search size={16} strokeWidth={1.5} className="text-cream-400" />
 					<input
 						value={query}
@@ -50,23 +51,20 @@ export default function MenuManagement() {
 						className="flex-1 bg-transparent text-cream-50 placeholder:text-cream-400 outline-none text-sm"
 					/>
 				</div>
-				<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-900 ps-3 h-10">
-					<Filter size={16} strokeWidth={1.5} className="text-cream-400" />
-					<select
-						value={cat}
-						onChange={(e) => setCat(e.target.value)}
-						className="bg-transparent text-cream-100 outline-none text-sm pe-2"
-					>
-						<option value="all" className="bg-bark-800">
-							{t("all")}
-						</option>
+				<Select value={cat} onValueChange={setCat}>
+					<SelectTrigger className="w-auto min-w-40 ps-3">
+						<Filter size={16} strokeWidth={1.5} className="text-cream-400 shrink-0" />
+						<SelectValue />
+					</SelectTrigger>
+					<SelectContent>
+						<SelectItem value="all">{t("all")}</SelectItem>
 						{categories.map((c) => (
-							<option key={c.id} value={c.slug} className="bg-bark-800">
+							<SelectItem key={c.id} value={c.slug}>
 								{lang === "fa" ? c.name_fa : c.name_en}
-							</option>
+							</SelectItem>
 						))}
-					</select>
-				</div>
+					</SelectContent>
+				</Select>
 			</div>
 
 			<div className="overflow-x-auto rounded-xl border border-bark-700/70 bg-bark-900">
@@ -111,13 +109,13 @@ export default function MenuManagement() {
 										<button
 											onClick={() => navigate(`/admin/menu/${m.id}/edit`)}
 											aria-label={t("edit")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-coffee-400 hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<Pencil size={16} strokeWidth={1.5} />
 										</button>
 										<button
 											aria-label={t("delete")}
-											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-danger hover:bg-bark-800"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] text-cream-300 hover:text-danger hover:bg-bark-800 transition-colors duration-150 active:opacity-80 focus-ring"
 										>
 											<Trash2 size={16} strokeWidth={1.5} />
 										</button>

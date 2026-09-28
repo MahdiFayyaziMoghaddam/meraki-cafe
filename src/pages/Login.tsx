@@ -47,7 +47,7 @@ export default function Login() {
 				<form onSubmit={handleSubmit} className="space-y-4">
 					<div>
 						<label className="text-sm text-cream-200 mb-1.5 block">{t("username")}</label>
-						<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 ps-3 h-11 focus-within:border-coffee-500 focus-within:ring-2 focus-within:ring-coffee-500/30">
+						<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 ps-3 h-11 transition-[border-color,outline-color] duration-150 hover:border-bark-600 focus-within:border-coffee-500 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-coffee-500">
 							<User size={18} strokeWidth={1.5} className="text-cream-400" />
 							<input
 								value={username}
@@ -60,7 +60,7 @@ export default function Login() {
 
 					<div>
 						<label className="text-sm text-cream-200 mb-1.5 block">{t("password")}</label>
-						<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 ps-3 h-11 focus-within:border-coffee-500 focus-within:ring-2 focus-within:ring-coffee-500/30">
+						<div className="flex items-center gap-2 rounded-[10px] border border-bark-700 bg-bark-800 ps-3 h-11 transition-[border-color,outline-color] duration-150 hover:border-bark-600 focus-within:border-coffee-500 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-coffee-500">
 							<Lock size={18} strokeWidth={1.5} className="text-cream-400" />
 							<input
 								type="password"
@@ -81,7 +81,7 @@ export default function Login() {
 					<button
 						type="submit"
 						disabled={loading || !username.trim()}
-						className="w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-coffee-500 h-11 text-cream-50 font-medium transition-colors hover:bg-coffee-400 disabled:opacity-60"
+						className="w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-coffee-500 h-11 text-cream-50 font-medium transition-colors hover:bg-coffee-400 disabled:opacity-60 focus-ring active:opacity-80"
 					>
 						<LogIn size={18} strokeWidth={1.5} />
 						{t("login")}

@@ -92,7 +92,7 @@ export default function Register() {
 				<Button className="w-full h-12 font-medium" onClick={handleVerify} disabled={loading || otpCode.length < 6}>
 					{loading ? (
 						<>
-							<Loader2 className="w-4 h-4 mr-2 animate-spin" />
+							<Loader2 className="w-4 h-4 ms-2 animate-spin" />
 							Verifying...
 						</>
 					) : (
@@ -101,7 +101,7 @@ export default function Register() {
 				</Button>
 				<p className="text-center text-sm text-muted-foreground mt-4">
 					Didn't receive the code?{" "}
-					<button onClick={handleResend} className="text-primary font-medium hover:underline">
+					<button onClick={handleResend} className="text-primary font-medium hover:underline transition-colors duration-150 focus-ring">
 						Resend
 					</button>
 				</p>
@@ -119,7 +119,7 @@ export default function Register() {
 					Already have an account?{" "}
 					<Link
 						to={"/login" + (safeReturnTo() !== "/" ? "?returnTo=" + encodeURIComponent(safeReturnTo()) : "")}
-						className="text-primary font-medium hover:underline"
+						className="text-primary font-medium hover:underline transition-colors duration-150 focus-ring"
 					>
 						Log in
 					</Link>
@@ -127,7 +127,7 @@ export default function Register() {
 			}
 		>
 			<Button variant="outline" className="w-full h-12 text-sm font-medium mb-6" onClick={handleGoogle}>
-				<GoogleIcon className="w-5 h-5 mr-2" />
+				<GoogleIcon className="w-5 h-5 ms-2" />
 				Continue with Google
 			</Button>
 
@@ -147,7 +147,7 @@ export default function Register() {
 					<Label htmlFor="email">Email</Label>
 					<div className="relative">
 						<Mail
-							className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+							className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
 							aria-hidden="true"
 						/>
 						<Input
@@ -158,7 +158,7 @@ export default function Register() {
 							placeholder="you@example.com"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
-							className="pl-10 h-12"
+							className="ps-10 h-12"
 							required
 						/>
 					</div>
@@ -167,7 +167,7 @@ export default function Register() {
 					<Label htmlFor="password">Password</Label>
 					<div className="relative">
 						<Lock
-							className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+							className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
 							aria-hidden="true"
 						/>
 						<Input
@@ -177,7 +177,7 @@ export default function Register() {
 							placeholder="••••••••"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
-							className="pl-10 h-12"
+							className="ps-10 h-12"
 							required
 						/>
 					</div>
@@ -186,7 +186,7 @@ export default function Register() {
 					<Label htmlFor="confirm">Confirm Password</Label>
 					<div className="relative">
 						<Lock
-							className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+							className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
 							aria-hidden="true"
 						/>
 						<Input
@@ -196,7 +196,7 @@ export default function Register() {
 							placeholder="••••••••"
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
-							className="pl-10 h-12"
+							className="ps-10 h-12"
 							required
 						/>
 					</div>
@@ -204,7 +204,7 @@ export default function Register() {
 				<Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
 					{loading ? (
 						<>
-							<Loader2 className="w-4 h-4 mr-2 animate-spin" />
+							<Loader2 className="w-4 h-4 ms-2 animate-spin" />
 							Creating account...
 						</>
 					) : (

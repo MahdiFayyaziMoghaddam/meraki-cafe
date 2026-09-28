@@ -39,7 +39,7 @@ export default function NewOrder() {
 			<div className="flex items-center gap-3 mb-6">
 				<button
 					onClick={() => navigate("/waiter")}
-					className="inline-flex size-10 items-center justify-center rounded-[10px] border border-bark-700 text-cream-200 hover:bg-bark-800"
+					className="inline-flex size-10 items-center justify-center rounded-[10px] border border-bark-700 text-cream-200 hover:bg-bark-800 transition-colors duration-150 focus-ring active:opacity-80"
 				>
 					<ArrowRight size={18} strokeWidth={1.5} className="rtl:rotate-0 ltr:rotate-180" />
 				</button>
@@ -60,7 +60,7 @@ export default function NewOrder() {
 								key={c.slug}
 								onClick={() => setActive(c.slug)}
 								className={cn(
-									"inline-flex items-center gap-2 rounded-full px-3.5 h-9 text-sm font-medium whitespace-nowrap border transition-colors",
+									"inline-flex items-center gap-2 rounded-full px-3.5 h-9 text-sm font-medium whitespace-nowrap border transition-colors focus-ring",
 									active === c.slug
 										? "bg-coffee-500 text-cream-50 border-coffee-500"
 										: "bg-bark-900 text-cream-200 border-bark-700 hover:bg-bark-800"
@@ -90,7 +90,7 @@ export default function NewOrder() {
 											onClick={() => setQty(m.id, -1)}
 											disabled={!qty}
 											aria-label="decrease"
-											className="inline-flex size-9 items-center justify-center rounded-[8px] border border-bark-700 text-cream-200 hover:bg-bark-800 disabled:opacity-40"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] border border-bark-700 text-cream-200 hover:bg-bark-800 disabled:opacity-40 transition-colors duration-150 focus-ring active:opacity-80"
 										>
 											<Minus size={16} strokeWidth={1.5} />
 										</button>
@@ -100,7 +100,7 @@ export default function NewOrder() {
 										<button
 											onClick={() => setQty(m.id, 1)}
 											aria-label="increase"
-											className="inline-flex size-9 items-center justify-center rounded-[8px] bg-coffee-500 text-cream-50 hover:bg-coffee-400"
+											className="inline-flex size-9 items-center justify-center rounded-[8px] bg-coffee-500 text-cream-50 hover:bg-coffee-400 transition-colors duration-150 focus-ring active:opacity-80"
 										>
 											<Plus size={16} strokeWidth={1.5} />
 										</button>
@@ -122,7 +122,7 @@ export default function NewOrder() {
 								{cartItems.map((it) => (
 									<div key={it.id} className="flex items-center justify-between gap-2 text-sm">
 										<div className="flex items-center gap-2 min-w-0">
-											<button onClick={() => setQty(it.id, -it.qty)} className="text-cream-400 hover:text-danger">
+											<button onClick={() => setQty(it.id, -it.qty)} className="text-cream-400 hover:text-danger transition-colors duration-150 focus-ring active:opacity-80">
 												<Trash2 size={15} strokeWidth={1.5} />
 											</button>
 											<span className="text-cream-100 truncate">
@@ -161,7 +161,7 @@ export default function NewOrder() {
 						<button
 							onClick={() => navigate("/waiter/orders")}
 							disabled={!cartItems.length}
-							className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-coffee-500 h-11 text-cream-50 font-medium hover:bg-coffee-400 disabled:opacity-40 transition-colors"
+							className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-coffee-500 h-11 text-cream-50 font-medium hover:bg-coffee-400 disabled:opacity-40 transition-colors focus-ring active:opacity-80"
 						>
 							<Check size={18} strokeWidth={1.5} /> {t("confirm")}
 						</button>

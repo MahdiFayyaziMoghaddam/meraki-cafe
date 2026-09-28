@@ -56,7 +56,8 @@ export default function Accounting() {
 				))}
 			</div>
 
-			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+			{/* 1 column below sm — same reason as Dashboard's KPI row. */}
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
 				<KpiCard
 					icon={HandCoins}
 					label={t("revenue")}
@@ -115,7 +116,7 @@ export default function Accounting() {
 					</button>
 				</div>
 				<div className="overflow-x-auto">
-					<table className="w-full text-sm">
+					<table className="w-full text-sm min-w-[42rem]">
 						<thead>
 							<tr className="text-cream-300 text-xs uppercase tracking-wider border-b border-bark-700">
 								<th className="text-start font-medium px-5 py-2.5">{t("title")}</th>

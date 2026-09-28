@@ -127,7 +127,7 @@ export default function DashboardLayout({
 			{open && (
 				<div className="lg:hidden fixed inset-0 z-50">
 					<div className="absolute inset-0 bg-ink-950/80 backdrop-blur-sm" onClick={() => setOpen(false)} />
-					<div className="absolute inset-y-0 start-0 w-72 bg-bark-900 border-e border-bark-800">
+					<div className="absolute inset-y-0 start-0 w-72 max-w-[85vw] bg-bark-900 border-e border-bark-800">
 						<button
 							onClick={() => setOpen(false)}
 							aria-label="Close menu"

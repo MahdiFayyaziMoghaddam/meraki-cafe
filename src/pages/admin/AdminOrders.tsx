@@ -60,7 +60,7 @@ export default function AdminOrders() {
 			</div>
 
 			<div className="overflow-x-auto rounded-xl border border-bark-700/70 bg-bark-900">
-				<table className="w-full text-sm">
+				<table className="w-full text-sm min-w-[64rem]">
 					<thead>
 						<tr className="text-cream-300 text-xs uppercase tracking-wider border-b border-bark-700">
 							<th className="text-start font-medium px-4 py-3">#</th>

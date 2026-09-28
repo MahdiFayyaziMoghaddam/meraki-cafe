@@ -23,7 +23,10 @@ export default function WaiterTables() {
 				}
 			/>
 
-			<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+			{/* 1 column below sm: a status badge with a 12-14 char Persian label needs ~124px,
+			    but a 2-up grid at 320px leaves only ~88px inside a p-6 card, so the label
+			    spilled past the card edge. 1 column is also a better tap target. */}
+			<div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
 				{tables.map((tb) => {
 					const occupied = tb.status === "occupied";
 					return (
@@ -31,7 +34,7 @@ export default function WaiterTables() {
 							key={tb.id}
 							onClick={() => navigate(`/waiter/order/new?table=${tb.number}`)}
 							className={cn(
-								"flex flex-col items-center justify-center gap-2 rounded-xl border p-6 transition-colors focus-ring active:opacity-80",
+								"flex flex-col items-center justify-center gap-2 rounded-xl border p-4 sm:p-6 transition-colors focus-ring active:opacity-80",
 								occupied
 									? "border-coffee-500/40 bg-bark-900 shadow-glow hover:border-coffee-500"
 									: "border-bark-700/70 bg-bark-900 hover:border-bark-600"

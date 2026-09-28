@@ -139,7 +139,9 @@ export default function Landing() {
 			<section ref={menuRef} className="mx-auto max-w-6xl px-4 sm:px-6 pb-14">
 				<SectionTitle icon={Coffee} title={t("exploreMenu")} />
 				<p className="text-sm text-cream-300 -mt-2 mb-4">{t("exploreMenuHint")}</p>
-				<div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+				{/* 1 column below sm: the card is p-4 + a size-10 icon + label, which overflows
+				    in a 2-up grid at 320px wide. */}
+				<div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 					{categories.map((c) => (
 						<Link
 							key={c.id}

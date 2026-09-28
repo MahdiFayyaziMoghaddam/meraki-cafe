@@ -37,7 +37,9 @@ export default function Dashboard() {
 		<div>
 			<PageHeader icon={LayoutDashboard} title={t("dashboard")} subtitle={t("overview")} />
 
-			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+			{/* 1 column below sm: a KpiCard is p-5 + a size-10 badge + a delta pill, which
+			    overflows the ~96px left over in a 2-up grid at 320px wide. */}
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
 				<KpiCard
 					icon={HandCoins}
 					label={t("revenue")}
@@ -113,7 +115,7 @@ export default function Dashboard() {
 					<h2 className="text-cream-50 font-semibold">{t("latestOrders")}</h2>
 				</div>
 				<div className="overflow-x-auto">
-					<table className="w-full text-sm">
+					<table className="w-full text-sm min-w-[54rem]">
 						<thead>
 							<tr className="text-cream-300 text-xs uppercase tracking-wider border-b border-bark-700">
 								<th className="text-start font-medium px-5 py-2.5">#</th>

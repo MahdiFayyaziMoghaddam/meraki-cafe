@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* Dark brown surfaces */
+		--bark-950: 21 33% 4%;
+		--bark-900: 26 37% 7%;
+		--bark-800: 20 33% 11%;
+		--bark-700: 19 32% 15%;
+		--bark-600: 20 32% 22%;
+		--bark-500: 21 31% 32%;
+		/* Coffee accent */
+		--coffee-400: 26 33% 54%;
+		--coffee-500: 25 40% 44%;
+		--coffee-600: 25 43% 35%;
+		--coffee-700: 25 47% 25%;
+		/* Cream light source */
+		--cream-50: 38 61% 96%;
+		--cream-100: 38 48% 90%;
+		--cream-200: 37 41% 81%;
+		--cream-300: 35 32% 69%;
+		--cream-400: 34 23% 54%;
+		/* Status */
+		--success: 139 19% 51%;
+		--warning: 35 59% 59%;
+		--danger: 6 46% 58%;
+		--info: 208 30% 60%;
+		/* Ink depth */
+		--ink-950: 21 33% 3%;
+		--ink-900: 31 25% 6%;
+
+		/* Semantic tokens */
+		--background: var(--bark-950);
+		--foreground: var(--cream-100);
+		--card: var(--bark-900);
+		--card-foreground: var(--cream-100);
+		--popover: var(--bark-800);
+		--popover-foreground: var(--cream-100);
+		--primary: var(--coffee-500);
+		--primary-foreground: var(--cream-50);
+		--secondary: var(--bark-800);
+		--secondary-foreground: var(--cream-100);
+		--muted: var(--bark-800);
+		--muted-foreground: var(--cream-300);
+		--accent: var(--coffee-700);
+		--accent-foreground: var(--cream-50);
+		--destructive: var(--danger);
+		--destructive-foreground: var(--cream-50);
+		--border: var(--bark-700);
+		--input: var(--bark-700);
+		--ring: var(--coffee-500);
+
+		--radius: 10px;
+		--font-heading: "Vazirmatn", "Inter", system-ui, sans-serif;
+		--font-body: "Vazirmatn", "Inter", system-ui, sans-serif;
+		--font-display: "Vazirmatn", "Inter", system-ui, sans-serif;
+		--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	html {
+		color-scheme: dark;
+	}
+	body {
+		@apply bg-background text-foreground font-body antialiased;
+	}
+	::selection {
+		background: hsl(var(--coffee-600));
+		color: hsl(var(--cream-50));
+	}
+	/* placeholder */
+	:focus-visible {
+		outline: 2px solid hsl(var(--coffee-400));
+		outline-offset: 2px;
+	}
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+		z-index: 0;
+		background-image:
+			radial-gradient(circle at 20% 0%, rgba(156, 104, 66, 0.08), transparent 50%),
+			radial-gradient(circle at 80% 100%, rgba(107, 74, 56, 0.06), transparent 50%);
+	}
+	.tabular-nums {
+		font-variant-numeric: tabular-nums;
+	}
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: hsl(var(--bark-950));
+}
+::-webkit-scrollbar-thumb {
+	background: hsl(var(--bark-700));
+	border-radius: 9999px;
+	border: 2px solid hsl(var(--bark-950));
+}
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(var(--bark-600));
+}

@@ -94,10 +94,25 @@ const dict = {
 		image: "تصویر",
 		rank: "رتبه",
 		count: "تعداد",
-		share: "سهم دسته"
+		share: "سهم دسته",
+		staffPortal: "ورود کارکنان",
+		staffPortalHint: "پنل مدیریت و پنل گارسون",
+		adminPanel: "پنل مدیر",
+		waiterPanel: "پنل گارسون",
+		exploreMenu: "کاوش منو",
+		exploreMenuHint: "دسته‌بندی‌های ما",
+		recentSales: "فروش امروز",
+		freeTables: "میزهای آزاد",
+		whyUs: "چرا مراکی؟",
+		whyFresh: "تازگی",
+		whyFreshDesc: "دانه‌ها هر هفته تازه چیده می‌شوند و هر فنجان در لحظه عصاره‌گیری می‌شود.",
+		whyCozy: "جایی آرام",
+		whyCozyDesc: "نور کم، موسیقی آرام و میزهایی که برای مکث و گفت‌وگو ساخته شده‌اند.",
+		whyService: "سرو سریع",
+		whyServiceDesc: "سفارش‌ها مستقیم از میز شما ثبت می‌شود؛ بدون صف و انتظار."
 	},
 	en: {
-		brand: "Meraki",
+		brand: "Meraki Cafe",
 		tagline: "Coffee crafted with obsessive love",
 		viewMenu: "View Menu",
 		hours: "Daily 8am – 12am",
@@ -191,7 +206,22 @@ const dict = {
 		image: "Image",
 		rank: "Rank",
 		count: "Count",
-		share: "Category share"
+		share: "Category share",
+		staffPortal: "Staff",
+		staffPortalHint: "Manager and waiter panels",
+		adminPanel: "Manager panel",
+		waiterPanel: "Waiter panel",
+		exploreMenu: "Explore the menu",
+		exploreMenuHint: "Browse by category",
+		recentSales: "Sales today",
+		freeTables: "Free tables",
+		whyUs: "Why Meraki?",
+		whyFresh: "Roasted fresh",
+		whyFreshDesc: "Beans are restocked weekly, and every cup is ground and extracted to order.",
+		whyCozy: "A quiet room",
+		whyCozyDesc: "Low light, soft music, and tables made for sitting down and staying a while.",
+		whyService: "Quick to the table",
+		whyServiceDesc: "Orders are taken straight from your table — no queue, no waiting."
 	}
 };
 

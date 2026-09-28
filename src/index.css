@@ -94,6 +94,33 @@
 	}
 }
 
+/*
+ * Scroll reveal. The hidden state hangs off [data-reveal="pending"], an attribute
+ * the useReveal hook adds from JS — so if JS never runs, or the observer never
+ * fires, the element simply has no attribute and renders visible. Hiding content
+ * by default would strand it behind a failed script.
+ */
+[data-reveal="pending"] {
+	opacity: 0;
+	transform: translateY(16px);
+	transition:
+		opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="shown"] {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-reveal="pending"],
+	[data-reveal="shown"] {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
 /* Subtle scrollbar */
 ::-webkit-scrollbar {
 	width: 10px;

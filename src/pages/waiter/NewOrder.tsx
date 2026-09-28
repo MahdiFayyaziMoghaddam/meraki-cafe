@@ -59,6 +59,23 @@ export default function NewOrder() {
 				<div className="lg:col-span-2">
 					{/* -mx-1 px-1 widens the clip box past the scroll edge, so the first and
 					    last chip's focus outline isn't cut off by overflow-x-auto. */}
+					{/* <div className="flex gap-2 px-1 pb-2 mb-4 -mx-1 overflow-x-auto">
+						{tabs.map((c) => (
+							<button
+								key={c.slug}
+								onClick={() => setActive(c.slug)}
+								className={cn(
+									"inline-flex items-center gap-2 rounded-full px-3.5 h-9 text-sm font-medium whitespace-nowrap border transition-colors focus-ring",
+									active === c.slug
+										? "bg-coffee-500 text-cream-50 border-coffee-500"
+										: "bg-bark-900 text-cream-200 border-bark-700 hover:bg-bark-800"
+								)}
+							>
+								{c.slug !== "all" && <CategoryIcon slug={c.slug} size={14} />}
+								{lang === "fa" ? c.name_fa : c.name_en}
+							</button>
+						))}
+					</div> */}
 
 					<div className="space-y-2">
 						{filtered.map((m) => {

@@ -4,14 +4,18 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "node scripts/dev.mjs",
+		"dev:web": "vite",
+		"dev:api": "node server/index.ts",
 		"build": "vite build",
 		"lint": "eslint . --quiet",
 		"lint:fix": "eslint . --fix",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.server.json",
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@ai-sdk/google": "^4.0.84",
+		"@ai-sdk/react": "^4.0.123",
 		"@hello-pangea/dnd": "^17.0.0",
 		"@hookform/resolvers": "^4.1.2",
 		"@radix-ui/react-accordion": "^1.2.3",
@@ -44,6 +48,7 @@
 		"@stripe/react-stripe-js": "^3.0.0",
 		"@stripe/stripe-js": "^5.2.0",
 		"@tanstack/react-query": "^5.84.1",
+		"ai": "^7.0.120",
 		"canvas-confetti": "^1.9.4",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
@@ -78,7 +83,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.19.0",
-		"@types/node": "^22.13.5",
+		"@types/node": "^22.20.4",
 		"@types/react": "^18.2.66",
 		"@types/react-dom": "^18.2.22",
 		"@vitejs/plugin-react": "^6.0.5",
